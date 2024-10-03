@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = {extras = ["standard"], version = "*"}
+asyncpg = "*"
+sqlalchemy = "*"
+psycopg2 = "*"
+python-dotenv = "*"
+alembic = "*"
+pytest = "*"
+httpx = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
