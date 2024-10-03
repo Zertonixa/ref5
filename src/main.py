@@ -54,4 +54,5 @@ def read_root():
 def read_item(item_id: int, q: Union[str, None] = None):
     return {"item_id": item_id, "q": q}
 
-app.include_router(kitten_router.router, prefix="/kitten", tags=["Kitten"])
+app.include_router(kitten_router.router, prefix="/kitten", tags=["Котёнок"])
+app.include_router(breen_router.router, prefix="/breed", tags=["Порода"])
