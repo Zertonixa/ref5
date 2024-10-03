@@ -1,16 +1,26 @@
 FROM python:3.9
 
 
-WORKDIR /code
 
 
-COPY ./requirements.txt /code/requirements.txt
+COPY ./requirements.txt /
 
 
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 
-COPY ./src /code/app
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 
-CMD ["fastapi", "run", "app/main.py", "--port", "80"]
+
+
+COPY . .
+
+
+
+RUN chmod a+x /docker_scripts/alembic.sh
+
+
+ENTRYPOINT ["/docker_scripts/alembic.sh"]
+
+
+CMD ["fastapi", "run", "src/main.py", "--port", "80"]

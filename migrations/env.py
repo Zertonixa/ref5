@@ -18,9 +18,9 @@ section = config.config_ini_section
 POSTGRES_USER = os.environ.get("POSTGRES_USER")
 POSTGRES_PASSWORD = os.environ.get("POSTGRES_PASSWORD")
 POSTGRES_DB = os.environ.get("POSTGRES_DB")
-POSTGRES_PORT = os.environ.get("POSTGRES_PORT")
-
-config.set_section_option(section, "DB_HOST", POSTGRES_PORT)
+POSTGRES_PORT = os.environ.get("POSTGRES_PORT") #POSTGRES_PORT_DOCKER for local
+POSTGRES_HOST = "db" #localhost for local
+config.set_section_option(section, "DB_HOST", POSTGRES_HOST)
 config.set_section_option(section, "DB_NAME", POSTGRES_DB)
 config.set_section_option(section, "DB_PORT", POSTGRES_PORT)
 config.set_section_option(section, "DB_USER", POSTGRES_USER)

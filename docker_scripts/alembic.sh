@@ -2,3 +2,5 @@
 
 cd ..
 alembic upgrade head
+
+exec "$@"
