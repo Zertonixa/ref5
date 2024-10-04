@@ -14,3 +14,5 @@
 ```sh
 docker-compose up -d
 ```
+# Swagger docs url
+`127.0.0.1/docs`
