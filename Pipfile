@@ -12,6 +12,7 @@ python-dotenv = "*"
 alembic = "*"
 pytest = "*"
 httpx = "*"
+pytest-asyncio = "*"
 
 [dev-packages]
 
