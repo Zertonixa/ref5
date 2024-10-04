@@ -11,7 +11,6 @@ router = APIRouter()
 
 @router.get("/", summary="Возвращает всех котят", response_model=list[Kitten])
 async def get_kiten(session : AsyncSession = Depends(get_async_session)):
-    # query = user.select()
     query = select(kitten)
     result = await session.execute(query)
     return result.all()
