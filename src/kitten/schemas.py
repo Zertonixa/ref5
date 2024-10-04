@@ -8,7 +8,7 @@ class Kitten(BaseModel):
     color: str
     description: str
 
-class KittenAdd(BaseModel):
+class KittenEdit(BaseModel):
     name: str
     breedID: int
     age: int
