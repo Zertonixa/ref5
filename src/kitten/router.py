@@ -15,7 +15,13 @@ async def get_kiten(session : AsyncSession = Depends(get_async_session)):
     result = await session.execute(query)
     return result.all()
 
-@router.get("/{id}", summary="Возвращает котят с указанным id породы", response_model=list[Kitten])
+@router.get("/{id}", summary="Возвращает котёнка с указанным id", response_model=list[Kitten])
+async def get_user_by_id(id: int, session : AsyncSession = Depends(get_async_session)):
+    query = select(kitten).where(kitten.c.kittenID == id)
+    result = await session.execute(query)
+    return result.all()
+
+@router.get("/by_breed/{id}", summary="Возвращает котят с указанным id породы", response_model=list[Kitten])
 async def get_user_by_id(id: int, session : AsyncSession = Depends(get_async_session)):
     query = select(kitten).where(kitten.c.breedID == id)
     result = await session.execute(query)
