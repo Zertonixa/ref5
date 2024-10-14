@@ -2,6 +2,7 @@
 ## kitten
 - GET `/kitten/`
 - GET `/kitten/{id}`
+- GET `/kitten/by_breed/{id}`
 - POST `/kitten/`
 - PUT `/kitten/{id}`
 - DELETE `/kitten/{id}`
